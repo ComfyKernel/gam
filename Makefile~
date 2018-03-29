@@ -1,0 +1,15 @@
+P_O   = ./
+P_BIN = $(P_O)/bin
+P_SRC = $(P_O)/src
+
+all:
+
+runtests:
+	make -C $(P_BIN) runtests
+
+lib:
+	make -C $(P_SRC) lib
+
+clean:
+	make -C $(P_BIN) clean
+	make -C $(P_SRC) clean
