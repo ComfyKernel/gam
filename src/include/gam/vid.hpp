@@ -4,6 +4,16 @@
 #include <string>
 
 namespace gam {
+  class window {
+  public:
+    void* __window;
+    
+    unsigned int width ();
+    unsigned int height();
+
+    std::string name();
+  };
+  
   namespace vid {
     namespace property {
       void* __get(const std::string&);
@@ -20,8 +30,11 @@ namespace gam {
 	__set(name, dat);
       }
     };
-    
+
     void clear();
+
+    gam::window* openWindow(const std::string&, unsigned int, unsigned int);
+    void closeWindow(gam::window*);
   };
 };
 
